@@ -1,0 +1,7 @@
+/app/*
+!/app/.keep
+/data/*
+!/data/.keep
+/mnt/*
+!/mnt/.keep
+/docker-compose.yml

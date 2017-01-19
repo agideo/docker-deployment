@@ -1,0 +1,22 @@
+version: "2"
+
+services:
+  redis:
+    image: redis:3.2-alpine
+    volumes:
+      - "./data/redis:/data"
+      - "./mnt:/mnt"
+
+  main:
+    image: ruby:2.3
+    hostname: api
+    volumes:
+      - "./app:/app"
+      - "./config/ssh_authorized_keys:/root/.ssh/authorized_keys"
+      - "./config/nginx.conf:/etc/nginx/conf.d/default.conf"
+      - "./mnt:/mnt"
+    ports:
+      - "10122:22"
+      - "127.0.0.1:10180:80"
+    depends_on:
+      - redis
