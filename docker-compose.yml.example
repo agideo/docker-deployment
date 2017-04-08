@@ -8,10 +8,11 @@ services:
       - "./mnt:/mnt"
 
   main:
-    image: ruby:2.3
+    image: agideo/baseimage:ruby2.2-b
     hostname: api
     volumes:
       - "./app:/app"
+      - "./config/debian_rc.local:/etc/rc.local"
       - "./config/ssh_authorized_keys:/root/.ssh/authorized_keys"
       - "./config/nginx.conf:/etc/nginx/conf.d/default.conf"
       - "./mnt:/mnt"
