@@ -12,7 +12,6 @@ services:
     hostname: api
     volumes:
       - "./app:/app"
-      - "./config/debian_rc.local:/etc/rc.local"
       - "./config/nginx.conf:/etc/nginx/conf.d/default.conf"
       - "./config/dotssh:/root/.ssh"
       - "./mnt:/mnt"
