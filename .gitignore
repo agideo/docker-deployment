@@ -6,3 +6,4 @@
 !/mnt/.keep
 /docker-compose.yml
 /config/dotssh
+/config/schedule.rb

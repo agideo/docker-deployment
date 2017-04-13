@@ -20,3 +20,14 @@ services:
       - "127.0.0.1:10180:80"
     depends_on:
       - redis
+
+  backup:
+    image: agideo/backup:4
+    hostname: backup
+    volumes:
+      - "./config/logrotate.d:/etc/logrotate.d"
+      # - "./config/schedule.rb:/root/config/schedule.rb"
+      - "./data/backup_config:/root/Backup"
+      - "./data/backup:/backup"
+      - "./mnt:/mnt"
+    restart: always
