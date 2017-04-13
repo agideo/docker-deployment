@@ -27,7 +27,6 @@ services:
     volumes:
       - "./config/logrotate.d:/etc/logrotate.d"
       # - "./config/schedule.rb:/root/config/schedule.rb"
-      - "./data/backup_config:/root/Backup"
-      - "./data/backup:/backup"
+      - "./data/backup:/root/Backup"
       - "./mnt:/mnt"
     restart: always
