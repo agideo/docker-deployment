@@ -26,7 +26,7 @@ services:
     hostname: backup
     volumes:
       - "./config/logrotate.d:/etc/logrotate.d"
-      # - "./config/schedule.rb:/root/config/schedule.rb"
+      - "./config/schedule.rb:/root/config/schedule.rb"
       - "./data/backup:/root/Backup"
       - "./mnt:/mnt"
     restart: always
