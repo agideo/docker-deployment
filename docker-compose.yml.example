@@ -22,11 +22,11 @@ services:
       - redis
 
   backup:
-    image: agideo/backup:4
+    image: agideo/backup:4-a
     hostname: backup
+    env_file: config/backup_env
     volumes:
-      - "./config/logrotate.d:/etc/logrotate.d"
-      - "./config/schedule.rb:/root/config/schedule.rb"
-      - "./data/backup:/root/Backup"
+      - "./data/backup_log:/root/Backup/log"
+      - "./app/shared/log:/app_log"
       - "./mnt:/mnt"
     restart: always
