@@ -5,4 +5,5 @@
 /mnt/*
 !/mnt/.keep
 /docker-compose.yml
-/config/dotssh
+/config/dotssh/*
+!/config/dotssh/.keep
