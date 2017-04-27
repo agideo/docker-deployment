@@ -1,12 +1,6 @@
 version: "2"
 
 services:
-  redis:
-    image: redis:3.2-alpine
-    volumes:
-      - "./data/redis:/data"
-      - "./mnt:/mnt"
-
   main:
     image: agideo/baseimage:ruby2.2-b
     hostname: api
@@ -20,6 +14,14 @@ services:
       - "127.0.0.1:10180:80"
     depends_on:
       - redis
+    restart: always
+
+  redis:
+    image: redis:3.2-alpine
+    volumes:
+      - "./data/redis:/data"
+      - "./mnt:/mnt"
+    restart: always
 
   backup:
     image: agideo/backup:4-a
