@@ -23,3 +23,5 @@ MYSQL_SERVER_DATABASE=
 BACKUP_MYSQL_NOTIFY_URL=
 BACKUP_APP_LOG_NOTIFY_URL=
 BACKUP_REDIS_NOTIFY_URL=
+
+# BACKUP_MYSQL_NOTIFY_URL=http://xxxxxx.agideo.com/items/xxxxxxx/logs?raw[record_count]=1&status=ok&token=xxxxxxxxx
