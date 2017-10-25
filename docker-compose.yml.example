@@ -1,9 +1,16 @@
 version: "2"
 
 services:
+  mysql:
+    image: mysql:5.7
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+    volumes:
+      - "mysql_data:/var/lib/mysql"
+      - ".:/app"
   main:
-    image: agideo/baseimage:ruby2.2-b
-    hostname: api
+    image: agideo/ruby:2.3-d
+    hostname: app_prd
     volumes:
       - "./app:/app"
       - "./config/nginx.conf:/etc/nginx/conf.d/default.conf"
@@ -14,6 +21,7 @@ services:
       - "127.0.0.1:10180:80"
     depends_on:
       - redis
+      - mysql
     restart: always
 
   redis:
