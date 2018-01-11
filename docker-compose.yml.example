@@ -9,8 +9,8 @@ services:
       - "mysql_data:/var/lib/mysql"
       - ".:/app"
   main:
-    image: agideo/ruby:2.3-d
-    hostname: app_prd
+    image: agideo/ruby:2.3-f
+    hostname: app-prd
     volumes:
       - "./app:/app"
       - "./config/nginx.conf:/etc/nginx/conf.d/default.conf"
