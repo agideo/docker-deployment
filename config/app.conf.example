@@ -1,0 +1,3 @@
+[program:app]
+
+command=/bin/bash -lc "bash /app/current/scripts/boot_production.bash"
