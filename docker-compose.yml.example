@@ -16,6 +16,7 @@ services:
       - "./config/nginx.conf:/etc/nginx/conf.d/default.conf"
       - "./config/dotssh:/root/.ssh"
       - "./mnt:/mnt"
+      # - "./config/app/app.conf:/etc/supervisor/conf.d/app.conf" # 自启动
     ports:
       - "10122:22"
       - "127.0.0.1:10180:80"
