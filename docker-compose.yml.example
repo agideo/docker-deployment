@@ -16,6 +16,7 @@ services:
       - "./config/nginx.conf:/etc/nginx/conf.d/default.conf"
       - "./config/dotssh:/root/.ssh"
       - "./mnt:/mnt"
+      - "./data/bundle:/usr/local/bundle"
       - "./config/app.conf:/etc/supervisor/conf.d/app.conf" # 自启动
     ports:
       - "22__APPID__:22"
