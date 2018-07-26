@@ -8,6 +8,7 @@ services:
     volumes:
       - "./data/mysql:/var/lib/mysql"
       - ".:/app"
+    restart: always
   main:
     image: agideo/ruby:2.3-f
     hostname: app-prd
